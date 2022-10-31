@@ -1,0 +1,104 @@
+
+
+.form {
+
+    &__group {
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__input {
+
+        font-family: inherit;
+        font-size: 1.5rem;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rgba($color: $color-white, $alpha: .5);
+        border: none;
+        border-bottom: .3rem solid transparent;
+        width: 90%;
+        display: block;
+        transition: all 0.3s;
+
+        @include respond (tab-port) {
+            width: 100%;
+        }
+
+        &:focus:invalid {
+            border-bottom: .3rem solid $color-secondary-dark;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $color-gray-dark-2;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color: $color-black, $alpha: .2);
+            border-bottom: .3rem solid $color-primary;
+        }
+        
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        opacity: 1;
+        transition: all .3s;
+    }
+    
+    &__input:placeholder-shown + &__label {
+
+        transform: translateY(-4rem);
+        visibility: hidden;
+        opacity: 0;
+
+    }
+
+    &__radio {
+
+        &-group {
+            display: inline-block;
+            width: 40%;
+
+            @include respond (tab-port) {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+        }
+
+        &-input {
+            visibility: hidden;
+        }
+
+
+
+        &-input:checked + &-label &-button {
+            background-color: $color-primary;
+            
+        }
+
+        &-button {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background-color: transparent;
+            outline-offset: .3rem;
+            outline: .5rem solid $color-primary;
+            transform: translate(-90%, 15%);
+        }
+
+        &-label {
+            font-size: $default-font-size;
+            cursor: pointer;
+        }
+    }
+
+
+}

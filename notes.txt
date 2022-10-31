@@ -1,0 +1,18 @@
+sass folders
+
+1. abstracts
+    a)functions
+    b)mixins
+    c)variables
+2. base
+    a)animations
+    b)base
+    c)typography
+    d)utilities
+3. components
+    needed components
+4. layout
+    a)header
+    b)footer
+    c)any reusable layout
+5. pages
